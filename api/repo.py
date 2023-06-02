@@ -30,4 +30,3 @@ hist = pygal.Bar(my_config,style=my_style)
 hist.title = "Most-Starred Python Projects on GitHub"
 hist.x_labels = names
 hist.add("",plot_dicts)
-hist.render_to_file('api/python_repo.svg')   

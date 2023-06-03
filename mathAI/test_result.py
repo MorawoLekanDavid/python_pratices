@@ -1,2 +1,4 @@
-from test import check_user_input
-check_user_input()
+from test import my_bot,user,check_user_input
+my_bot()
+input = user()
+oper = check_user_input(input)

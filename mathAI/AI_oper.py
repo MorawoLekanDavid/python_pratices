@@ -24,8 +24,15 @@ def perform_arithmetic(oper,nums):
     if oper == bot_task_array()[2]:
         res = float(num_array[0])
         for num in num_array[1:]:
-            res /= float(num)
-        print(f"The {oper} of the numbers is: {float(res)}")
+            try:
+                if float(num) == 0:
+                      raise ZeroDivisionError
+            except ZeroDivisionError:
+                print("You can't divide by zero")
+                break
+            else:
+                res /= float(num)
+        print(f"The {oper} of the numbers is: {res}")
     if oper == bot_task_array()[3]:
         dm = 1
         for num in num_array:

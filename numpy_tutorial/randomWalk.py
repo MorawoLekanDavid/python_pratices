@@ -13,13 +13,28 @@ for i in range(nsteps):
 #plt.plot(walk[:100])
 #plt.show()
 
-# Numpy method
+# Numpy method for a random walk
 rng = np.random.default_rng(seed=12345)
 draws = rng.integers(0,2,size=nsteps)
 steps = np.where(draws==0,1,-1)
 walks = steps.cumsum()
-print(walks)
-print(walks.min(),walks.max())
-plt.plot(walks[:nsteps])
-plt.savefig('numpy_tutorial/numpy_randomWalk.png',bbox_inches='tight')
-plt.show()
+#print(walks)
+#print(walks.min(),walks.max())
+#plt.plot(walks[:nsteps])
+#plt.savefig('numpy_tutorial/numpy_randomWalk.png',bbox_inches='tight')
+#plt.show()
+
+#Numpy method for many random walk
+nstep = 10
+nwalk = 50
+rng = np.random.default_rng(seed=12345)
+draws = rng.integers(0,2,size=(nwalk,nstep))
+steps = np.where(draws > 0,1,-1)
+walks = steps.cumsum(axis=1)
+hit30 = (np.abs(walks) >= 3).any(axis=1)
+#print(walks)
+#print(hit30)
+print(walks[hit30])
+#print(walks[hit30].sum(axis=1))
+print(walks[hit30].argmax(axis=1))
+print(walks[hit30].mean())

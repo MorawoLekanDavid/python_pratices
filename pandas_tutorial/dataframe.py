@@ -9,4 +9,4 @@ data = {}
 for j in range(len(datas[0])):
     data[datas[0,j]] = datas[1:,j]
     frame = pd.DataFrame(data)
-print(frame)
+print(frame.index)

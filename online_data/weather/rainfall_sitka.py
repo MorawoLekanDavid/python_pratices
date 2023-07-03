@@ -31,7 +31,7 @@ with open(filename) as f:
     plt.title("Max 'n' min sea level in sitka July, 2014")
     fig.autofmt_xdate()
     #plt.legend()
-    plt.savefig("online_data/seaLevel.png", bbox_inches="tight")
+    #plt.savefig("online_data/seaLevel.png", bbox_inches="tight")
     plt.show()
 
        
